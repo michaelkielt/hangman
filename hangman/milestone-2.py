@@ -10,11 +10,11 @@ for fruit in favourite_fruits:
 random_fruit = random.choice(favourite_fruits) 
 print(random_fruit)
 
-# Getting input from the user and assigning it to a variable named 'guess'
-guess = input("Please enter a single letter...")
+# Getting input from the user and assigning it to a variable named 'user_guess'
+user_guess = input("Please enter a single letter...")
 
 # Validating that the guess is the correct length and alphabectical
-if len(guess) == 1 and guess.isalpha():
+if len(user_guess) == 1 and user_guess.isalpha():
     print("Good guess")
 else:
     print("Oops! That is not a valid input")
