@@ -26,7 +26,7 @@ def check_guess(guess):
         else:
             print(f"Sorry, '{guess}' is not in the word. Try again.") 
 
-
+# Creating a function for the user input validation logic
 def ask_for_input():
     while (True):
         guess = input("Please guess by entering a letter")
