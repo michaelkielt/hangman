@@ -6,9 +6,9 @@ favourite_fruits = ["Strawberry", "Mango", "Pineapple", "Kiwi", "Nectarine"]
 for fruit in favourite_fruits:
     print(fruit)
 
-# Selecting a random item from the list and assigning it to the 'word' variable
-word = random.choice(word_list) 
-print(word)
+# Selecting a random item from the favourite_fruits list and assigning it to the 'random_fruit' variable
+random_fruit = random.choice(favourite_fruits) 
+print(random_fruit)
 
 # Getting input from the user and assigning it to a variable named 'guess'
 guess = input("Please enter a single letter...")
