@@ -2,8 +2,9 @@
 import random
 
 # Creating a list of my 5 favourite fruits
-word_list = ["Strawberry", "Mango", "Pineapple", "Kiwi", "Nectarine"]
-
+favourite_fruits = ["Strawberry", "Mango", "Pineapple", "Kiwi", "Nectarine"]
+for fruit in favourite_fruits:
+    print(fruit)
 
 # Selecting a random item from the list and assigning it to the 'word' variable
 word = random.choice(word_list) 
