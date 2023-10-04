@@ -12,24 +12,30 @@ class Hangman:
         self.list_of_guesses = []
 
 
-def check_guess(self, user_guess):
+    def check_guess(self, user_guess):
         user_guess = user_guess.lower()
         if user_guess in self.word:
-            print(f"Good guess! '{user_guess}' is in the word.")    
+            print("Good guess! '{}' is in the word.".format(user_guess))
+            for letter in range(len(self.word)):
+                if self.word[letter] == user_guess:
+                    self.word_guessed[letter] == user_guess
+            self.num_letters -= 1           
         else:
-            print(f"Sorry, '{user_guess}' is not in the word. Try again.")
+            print("Sorry, '{}' is not in the word. Try again.".format(user_guess))
+            self.num_lives -= 1
+            print("You have '{}' number of lives left".format(self.num_lives))
 
-def ask_for_input(self):
-    while (True):
-        user_guess = input("Please guess by entering a letter")
-        if len(user_guess) != 1 or not user_guess.isalpha():
-            print("Invalid letter. Please, enter a single alphabetical character.")
-        elif user_guess in self.list_of_guesses:
-            print("You already tried that letter!")
-        elif len(user_guess) == 1 and user_guess.isalpha() and user_guess not in self.list_of_guesses:
-            self.check_guess(user_guess)
-            self.list_of_guesses.append(user_guess)
-            break
+    def ask_for_input(self):
+        while (True):
+            user_guess = input("Please guess by entering a letter")
+            if len(user_guess) != 1 or not user_guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif user_guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            elif len(user_guess) == 1 and user_guess.isalpha() and user_guess not in self.list_of_guesses:
+                self.check_guess(user_guess)
+                self.list_of_guesses.append(user_guess)
+                break
 
 word_list = ["Strawberry", "Mango", "Pineapple", "Kiwi", "Nectarine"]
 hangman_game = Hangman(word_list)
