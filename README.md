@@ -24,7 +24,7 @@ The primary goals of this project are as follows:
 
 Throughout the development of this Hangman game project, I learned and developed several key concepts and skills:
 
-1. Python Programming: Python Programming Proficiency: I developed my Python programming skills, utilising fundamental concepts like variables, data structures like lists and strings, conditional statements, and loops to build a fully functional game.
+1. Python Programming: I developed my Python programming skills, utilising fundamental concepts like variables, data structures like lists and strings, conditional statements, and loops to build a fully functional game.
 2. Problem-Solving: I implemented algorithms for critical game components such as word selection, input validation and checking player guesses. This experience enhanced my problem-solving capabilities and developed my algorithm skills in Python.
 3. User Input Handling: I gained valuable experience in handling user input effectively.
 4. Game Logic: I constructed the game's logic to manage the game's status, monitor player progress in the form of player lives, and track remaining guesses.
