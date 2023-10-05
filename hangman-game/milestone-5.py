@@ -39,7 +39,7 @@ class Hangman:
         self.num_lives = num_lives
         self.word = random.choice(word_list)
         self.word_guessed = ['_' for _ in self.word]
-        self.num_letters = len(set(self.word))
+        self.num_letters = len(self.word)
         self.list_of_guesses = []
 
         print(f"The mystery word has '{self.num_letters}' characters in it!")
@@ -70,7 +70,7 @@ class Hangman:
         for i, letter in enumerate(self.word):
             if letter == user_guess:
                 self.word_guessed[i] = user_guess
-        self.num_letters -= 1
+        self.num_letters -= self.word_guessed.count(user_guess)
        
         """
         Continuously prompt the user to guess a letter until a valid input is provided.
@@ -99,7 +99,7 @@ def play_game(word_list):
             break
         if game.num_letters > 0:
             game._ask_for_input()
-        if game.num_lives > 0 and not game.num_letters > 0:
+        if game.num_lives > 0 and game.num_letters == 0:
             print("Congratulations, you won the game!")
             break   
 
