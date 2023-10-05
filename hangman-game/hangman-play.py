@@ -77,8 +77,7 @@ class Hangman:
         """
     def _ask_for_input(self):
         while True:
-            user_guess = input("Please guess by entering a letter")
-            user_guess = user_guess.lower()
+            user_guess = input("Please guess by entering a letter").lower()
             if len(user_guess) != 1 or not user_guess.isalpha():
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif user_guess in self.list_of_guesses:
