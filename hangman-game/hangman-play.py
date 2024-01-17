@@ -45,6 +45,7 @@ class Hangman:
         print(f"The mystery word has '{self.num_letters}' characters in it!")
         print(f"{self.word_guessed}")
 
+        
         """
         Prints the current game standing after checking if the user's guess is in the
         secret word.
@@ -59,7 +60,16 @@ class Hangman:
             print(f"Sorry, {user_guess} is not in the word. Try again.")
             self.num_lives -= 1
             print(f"You have {self.num_lives} number of lives left")
+
+        
+        """Displays the current progress of the guessed word.
+
+        Prints the current state of the word with guessed letters filled in.
+        """
+    def _display_word_progress(self):
+        print("Current word progress: " + ' '.join(self.word_guessed))
        
+        
         """
         Updates the word_guessed representation with the correct guess.
 
@@ -67,17 +77,23 @@ class Hangman:
             user_guess (str): The letter guessed by the user.
         """
     def _update_guessed_word(self, user_guess):
-        for i, letter in enumerate(self.word):
-            if letter == user_guess:
+        found = False
+        for i in range(len(self.word)):
+            if user_guess == self.word[i]:
                 self.word_guessed[i] = user_guess
-        self.num_letters -= self.word_guessed.count(user_guess)
-       
+                found = True
+
+        if found:
+            self.num_letters -= 1    
+        self._display_word_progress()
+        
+        
         """
         Continuously prompt the user to guess a letter until a valid input is provided.
         """
     def _ask_for_input(self):
         while True:
-            user_guess = input("Please guess by entering a letter").lower()
+            user_guess = input("Please guess by entering a letter: ").lower()
             if len(user_guess) != 1 or not user_guess.isalpha():
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif user_guess in self.list_of_guesses:
